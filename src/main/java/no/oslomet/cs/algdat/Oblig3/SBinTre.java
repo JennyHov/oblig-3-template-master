@@ -81,6 +81,8 @@ public class SBinTre<T> {
         return antall == 0;
     }
 
+    //Oppgave 1
+
     public boolean leggInn(T verdi) {
         //Programkode fra 5.2.3 a)
         //Sjekke at referansen "forelder" får korrekt verdi
@@ -109,7 +111,9 @@ public class SBinTre<T> {
 
         antall ++;
         return true;
-     }
+    }
+
+    //Oppgave 6
 
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
@@ -118,6 +122,8 @@ public class SBinTre<T> {
     public int fjernAlle(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
+
+    //Oppgave 2
 
     public int antall(T verdi) {
 
@@ -137,8 +143,12 @@ public class SBinTre<T> {
                 p = p.venstre;
             }
             else {
-                val++;
+                if (cmp == 0){
+                    val++;
+                }
+
                 p = p.høyre;
+
             }
         }
 
@@ -146,9 +156,13 @@ public class SBinTre<T> {
 
     }
 
+    //Oppgave 6
+
     public void nullstill() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
+
+    //Oppgave 3
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
 
@@ -187,8 +201,20 @@ public class SBinTre<T> {
 
     }
 
+    //Oppgave 4
+
     public void postorden(Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        //Skrive ut treet i post orden til skjerm
+        //Implementere første funksjonen uten bruk av rekursjon eller hjelpevariabler (stack/queue)
+        //Bruke nestePostorden
+
+        Node<T> p = rot;
+
+        while (p == nestePostorden(p)){
+            //skjønner ingentingggggggg
+        }
+
     }
 
     public void postordenRecursive(Oppgave<? super T> oppgave) {
@@ -197,7 +223,12 @@ public class SBinTre<T> {
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+
+
     }
+
+    //Oppgave 5
 
     public ArrayList<T> serialize() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
@@ -207,7 +238,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
-
+/*
     public static void main(String[] args) {
         Integer[] a = {4, 7, 2, 9, 5, 10, 8, 1, 3, 6};
         SBinTre<Integer> tre = new SBinTre<>(Comparator.naturalOrder());
@@ -216,6 +247,6 @@ public class SBinTre<T> {
         }
         System.out.println(tre.antall());
     }
-
+ */
 
 } // ObligSBinTre
