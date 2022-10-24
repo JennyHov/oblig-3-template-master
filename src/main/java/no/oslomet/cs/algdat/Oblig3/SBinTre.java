@@ -261,6 +261,14 @@ public class SBinTre<T> {
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         //Tar arrayet og legger inn alle verdiene (nivå orden) og gjenskaper treet
 
+        SBinTre<K> tre = new SBinTre<>(c);
+
+        for(K verdi) {
+            tre.leggInn(verdi);
+        }
+
+        return tre;
+
     }
 
 /*
