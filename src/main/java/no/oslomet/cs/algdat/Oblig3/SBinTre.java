@@ -3,6 +3,7 @@ package no.oslomet.cs.algdat.Oblig3;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class SBinTre<T> {
@@ -83,8 +84,26 @@ public class SBinTre<T> {
     }
 
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+        Objects.requireNonNull(verdi, "Ulovlig med nullverdier :')");
+
+        Node<T> p = rot, q = null;
+        int cmp = 0;
+
+        while (p != null){
+            q = p;
+            cmp = comp.compare(verdi, p.verdi);
+            p = cmp < 0 ? p.venstre : p.høyre;
+        }
+
+        p = new Node<> (verdi, q);
+
+        if (q == null) rot = p;
+        else if (cmp < 0) q.venstre = p;
+        else q.høyre = p;
+
+        antall ++;
+        return true;
+     }
 
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
@@ -129,6 +148,15 @@ public class SBinTre<T> {
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
+
+    /*
+    public static void main(String[] args){
+        Integer[] a = {4,7,2,9,5,10,8,1,3,6};
+        SBinTre<Integer> tre = new SBinTre<>(Comparator.naturalOrder());
+        for (int verdi : a) {tre.leggInn(verdi); }
+        System.out.println(tre.antall());
+    }
+     */
 
 
 } // ObligSBinTre
