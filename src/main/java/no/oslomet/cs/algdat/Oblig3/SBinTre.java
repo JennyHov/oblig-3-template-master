@@ -135,6 +135,7 @@ public class SBinTre<T> {
 
         while (p != null) {
             int cmp = comp.compare (verdi, p.verdi);
+
             if (cmp < 0) {
                 p = p.venstre;
             }
@@ -153,11 +154,16 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        Objects.requireNonNull(p);
+
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        Objects.requireNonNull(p);
+
+
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
