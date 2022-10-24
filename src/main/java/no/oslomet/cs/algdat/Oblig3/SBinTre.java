@@ -156,12 +156,6 @@ public class SBinTre<T> {
     private static <T> Node<T> førstePostorden(Node<T> p) {
 
         Objects.requireNonNull(p);
-
-    }
-
-    private static <T> Node<T> nestePostorden(Node<T> p) {
-
-        Objects.requireNonNull(p);
         //if (tom()) {throw new NoSuchElementException ("");
 
         while (true) {
@@ -174,6 +168,13 @@ public class SBinTre<T> {
                 return p;
             }
         }
+
+    }
+
+    private static <T> Node<T> nestePostorden(Node<T> p) {
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+
 
     }
 
