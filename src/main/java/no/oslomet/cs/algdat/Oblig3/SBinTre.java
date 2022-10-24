@@ -47,6 +47,7 @@ public class SBinTre<T> {
     }
 
     public boolean inneholder(T verdi) {
+        //Avgjør om en verdi ligger i treet eller ikke
         if (verdi == null) return false;
 
         Node<T> p = rot;
@@ -117,6 +118,29 @@ public class SBinTre<T> {
 
     public int antall(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        /*
+        Returnere antall forekomster av verdi i treet
+        Kan inneholde duplikater - verdier kan forekomme flere ganger
+        Returnerer 0 hvis verdien ikke er i treet
+         */
+
+        Node<T> p = rot;
+        int val = 0;
+
+        while (p != null) {
+            int cmp = comp.compare (verdi, p.verdi);
+            if (cmp < 0) {
+                p = p.høyre;
+            }
+            else {
+                val++;
+                p = p.venstre;
+            }
+        }
+
+        return val;
+
     }
 
     public void nullstill() {
