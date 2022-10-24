@@ -263,7 +263,7 @@ public class SBinTre<T> {
 
         SBinTre<K> tre = new SBinTre<>(c);
 
-        for(K verdi) {
+        for(K verdi : data) {
             tre.leggInn(verdi);
         }
 
