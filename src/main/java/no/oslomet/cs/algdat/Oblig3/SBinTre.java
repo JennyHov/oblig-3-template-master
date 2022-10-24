@@ -117,7 +117,6 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
 
         /*
         Returnere antall forekomster av verdi i treet
@@ -131,11 +130,11 @@ public class SBinTre<T> {
         while (p != null) {
             int cmp = comp.compare (verdi, p.verdi);
             if (cmp < 0) {
-                p = p.høyre;
+                p = p.venstre;
             }
             else {
                 val++;
-                p = p.venstre;
+                p = p.høyre;
             }
         }
 
