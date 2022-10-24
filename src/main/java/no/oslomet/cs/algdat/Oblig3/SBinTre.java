@@ -162,7 +162,19 @@ public class SBinTre<T> {
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
         Objects.requireNonNull(p);
+        //if (tom()) {throw new NoSuchElementException ("");
 
+        Node<T> p = rot;
+        while (true) {
+            if (p.venstre != null){
+                p = p.venstre;
+            } else if (p.høyre != null) {
+                p = p.høyre;
+            }
+            else {
+                return p;
+            }
+        }
 
     }
 
