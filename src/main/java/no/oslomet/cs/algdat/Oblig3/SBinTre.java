@@ -1,6 +1,7 @@
 package no.oslomet.cs.algdat.Oblig3;
 
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class SBinTre<T> {
@@ -230,12 +231,36 @@ public class SBinTre<T> {
 
     //Oppgave 5
 
+    /*
+    Legge treet inn i en datastruktur (fil-skriving)
+    Seralize som gjør om binærtreet til et array
+    Deseralize som tar et array og gjør om til et binært søketre
+
+     */
+
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Iterative og må bruke en kø til å traversere treet i nivå orden
+        //Arrayet som returneres skal inneholde verdeine i alle nodene i nivå orden
+
+        ArrayList<T> treArray = new ArrayList<>();
+        Queue<Node<T>> ko = new LinkedList<>();
+
+        ko.add(rot);
+
+        while(!ko.isEmpty()){
+            Node<T> p = ko.remove();
+            treArray.add(p.verdi);
+
+            if(p.venstre != null) {
+                ko.add(p.høyre);
+            }
+        }
+        return treArray;
     }
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Tar arrayet og legger inn alle verdiene (nivå orden) og gjenskaper treet
+
     }
 
 /*
