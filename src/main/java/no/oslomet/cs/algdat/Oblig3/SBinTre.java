@@ -84,6 +84,8 @@ public class SBinTre<T> {
     }
 
     public boolean leggInn(T verdi) {
+        //Programkode fra 5.2.3 a)
+        //Sjekke at referansen "forelder" får korrekt verdi
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier :')");
 
         Node<T> p = rot, q = null;
