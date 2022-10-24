@@ -164,7 +164,6 @@ public class SBinTre<T> {
         Objects.requireNonNull(p);
         //if (tom()) {throw new NoSuchElementException ("");
 
-        Node<T> p = rot;
         while (true) {
             if (p.venstre != null){
                 p = p.venstre;
