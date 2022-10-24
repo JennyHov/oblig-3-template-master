@@ -252,7 +252,7 @@ public class SBinTre<T> {
             treArray.add(p.verdi);
 
             if(p.venstre != null) {
-                ko.add(p.høyre);
+                ko.add(p.venstre);
             }
             if(p.høyre != null){
                 ko.add(p.høyre);
