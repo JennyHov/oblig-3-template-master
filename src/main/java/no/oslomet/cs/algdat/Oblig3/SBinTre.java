@@ -100,9 +100,15 @@ public class SBinTre<T> {
 
         p = new Node<> (verdi, q);
 
-        if (q == null) rot = p;
-        else if (cmp < 0) q.venstre = p;
-        else q.høyre = p;
+        if (q == null) {
+            rot = p;
+        }
+        else if (cmp < 0) {
+            q.venstre = p;
+        }
+        else {
+            q.høyre = p;
+        }
 
         antall ++;
         return true;
