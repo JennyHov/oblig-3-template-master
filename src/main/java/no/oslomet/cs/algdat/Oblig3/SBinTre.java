@@ -254,6 +254,9 @@ public class SBinTre<T> {
             if(p.venstre != null) {
                 ko.add(p.høyre);
             }
+            if(p.høyre != null){
+                ko.add(p.høyre);
+            }
         }
         return treArray;
     }
