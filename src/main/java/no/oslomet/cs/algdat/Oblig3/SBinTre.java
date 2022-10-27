@@ -177,7 +177,17 @@ public class SBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (tom()) {
+            return 0;
+        }
+
+        int antall = 0;
+
+        while (fjern(verdi)){
+            antall++;
+        }
+
+        return antall;
     }
 
     //Oppgave 2
