@@ -118,6 +118,54 @@ public class SBinTre<T> {
 
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if(verdi == null) return false;
+        Node<T> p = rot;
+        Node<T> q = null;
+
+        while(p != null){
+            int cmp = comp.compare(verdi, p.verdi);
+            if(cmp < 0){
+                q = p;
+                p = p.venstre;
+            } else if (cmp > 0) {
+                q = p;
+                p = p.høyre;
+            } else break;
+        }
+
+        if (p == null) {
+            return false;
+        }
+
+        if (p.venstre == null || p.høyre == null) {
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;
+
+            if (p == rot) {
+                rot = b;
+            } else if (p == q.venstre) {
+                q.venstre = b;
+            } else {
+                q.høyre = b;
+            }
+        } else {
+            Node<T> s = p;
+            Node<T> r = p.høyre;
+            while(r.venstre != null){
+                s = r;
+                r = r.venstre;
+            }
+            p.verdi = r.verdi;
+
+            if(s != p){
+                s.venstre = r.høyre;
+            } else {
+                s.høyre = r.høyre;
+            }
+        }
+
+        antall--;
+        return true;
     }
 
     public int fjernAlle(T verdi) {
@@ -205,7 +253,9 @@ public class SBinTre<T> {
     //Oppgave 4
 
     public void postorden(Oppgave<? super T> oppgave) {
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
 
+        /*
         //Skrive ut treet i post orden til skjerm
         //Implementere første funksjonen uten bruk av rekursjon eller hjelpevariabler (stack/queue)
         //Bruke nestePostorden
@@ -215,6 +265,8 @@ public class SBinTre<T> {
         while (p == nestePostorden(p)){
             //skjønner ingentingggggggg
         }
+
+         */
 
     }
 
