@@ -117,9 +117,10 @@ public class SBinTre<T> {
     //Oppgave 6
 
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Kopiert 5.2.8 d)
 
         if(verdi == null) return false;
+
         Node<T> p = rot;
         Node<T> q = null;
 
@@ -148,19 +149,26 @@ public class SBinTre<T> {
             } else {
                 q.høyre = b;
             }
+            if (b != null){
+                b.forelder = q;
+            }
         } else {
             Node<T> s = p;
             Node<T> r = p.høyre;
-            while(r.venstre != null){
+            while (r.venstre != null){
                 s = r;
                 r = r.venstre;
             }
+
             p.verdi = r.verdi;
 
             if(s != p){
                 s.venstre = r.høyre;
             } else {
                 s.høyre = r.høyre;
+            }
+            if (r.høyre != null) {
+                r.høyre.forelder = s;
             }
         }
 
