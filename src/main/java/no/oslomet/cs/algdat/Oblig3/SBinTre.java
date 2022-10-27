@@ -253,17 +253,17 @@ public class SBinTre<T> {
 
         Objects.requireNonNull(p);
 
-        Node<T> f = p.forelder;
+        Node<T> h = p.forelder;
 
-        if (f == null){
+        if (h == null){
             return null;
         }
 
-        if (f.høyre == p || f.høyre == null){
-            return f;
+        if (h.høyre == p || h.høyre == null){
+            return h;
         }
         else {
-            return førstePostorden(f.høyre);
+            return førstePostorden(h.høyre);
         }
 
     }
@@ -281,7 +281,7 @@ public class SBinTre<T> {
         Node<T> p = rot;
 
         while (p == nestePostorden(p)){
-            //skjønner ingentingggggggg
+
         }
 
          */
